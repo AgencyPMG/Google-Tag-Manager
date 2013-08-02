@@ -46,7 +46,7 @@ class Front extends TagManagerBase
 
         ?>
         <script>
-            dataLayer = dataLayer || [];
+            var dataLayer = dataLayer || [];
             <?php if ($layer): ?>
                 dataLayer.push(<?php echo json_encode($layer); ?>);
             <?php endif; ?>
