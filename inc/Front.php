@@ -93,6 +93,17 @@ class Front extends TagManagerBase
         } elseif(is_singular()) {
             $layer['page_type'] = 'singular';
             $layer['post_type'] = isset($obj->post_type) ? $obj->post_type : 'post';
+
+            if (!empty($obj->post_date_gmt)) {
+                $pd = new \DateTime($obj->post_date_gmt, new \DateTimeZone('UTC'));
+                $layer['post_year'] = $pd->format('Y');
+                $layer['post_month'] = $pd->format('m');
+                $layer['post_day'] = strtolower($pd->format('l'));
+            }
+
+            if (!empty($obj->post_author)) {
+                $layer['post_author'] = get_the_author_meta('user_nicename', $obj->post_author);
+            }
         } elseif (is_post_type_archive()) {
             $layer['page_type'] = 'post_type_archive';
             $layer['post_type'] = isset($obj->name) ? $obj->name : null;
