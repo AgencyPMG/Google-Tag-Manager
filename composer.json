@@ -1,0 +1,16 @@
+{
+    "name": "pmg/wp-google-tag-manager",
+    "description": "Adds Google Tag Manager to your WordPress Site.",
+    "keywords": ["wordpress"],
+    "license": "MIT",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "Christopher Davis",
+            "email": "chris@pmg.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    }
+}
